@@ -40,6 +40,12 @@ public class RandomUtils {
 	}
 
 	public static ItemStack getWirelessTerm(InventoryPlayer playerInv) {
+		if (playerInv == null){
+			return null;
+		}
+		if (playerInv.player == null){
+			return null;
+		}
 		if (playerInv.player.getHeldItem() != null && playerInv.player.getHeldItem().getItem() instanceof IWirelessCraftingTerminalItem) {
 			return playerInv.player.getHeldItem();
 		}
